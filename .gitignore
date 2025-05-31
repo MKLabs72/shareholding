@@ -1,0 +1,16 @@
+# ─── Node / React ─────────────────────────────────────────────────────────
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# React build output
+frontend/build/
+
+# Local env files (never commit your secrets)
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+
+# OS-specific or editor-specific
+.DS_Store
+.vscode/
