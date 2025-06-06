@@ -1,0 +1,25 @@
+name: Contracts & Frontend Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Install deps (contracts)
+        run: cd contracts && npm install
+      - name: Run tests (contracts)
+        run: cd contracts && npx hardhat test
+      - name: Install deps (frontend)
+        run: cd frontend && npm install
+      - name: Build frontend
+        run: cd frontend && npm run build

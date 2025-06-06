@@ -1,0 +1,1626 @@
+/* ======================================================================
+   RVNWL BRAND DESIGN TOKENS
+   ====================================================================== */
+   :root {
+    /* --- Brand Core Palette --- */
+    --rvnwl-space:  #0A0A0E;   /* deep space bg */
+    --rvnwl-ember:  #F63D20;   /* plasma burn */
+    --rvnwl-glow:   #FF7640;   /* flash/hover */
+    --rvnwl-cyan:   #0CF2E0;   /* stellar cyan */
+    --rvnwl-ivory:  #F2F2F2;   /* light text */
+    --rvnwl-white:  #FAFAFA;
+    --rvnwl-black:  #070F1B;
+    --rvnwl-gray1:  #14141A;   /* cards dark */
+    --rvnwl-gray2:  #2A2A32;   /* lines */
+    --rvnwl-gray3:  #e9ecef;   /* light bg */
+  
+    /* --- For gradients, accents, status --- */
+    --rvnwl-success: #28e6ad;
+    --rvnwl-warning: #ffc107;
+    --rvnwl-danger:  #ff5067;
+  
+    /* --- Theme: Light --- */
+    --bg-light:      var(--rvnwl-white);
+    --text-light:    #1A1A1A;
+    --card-bg-light: #fff;
+    --card-text-light: #212529;
+    --card-border-light: var(--rvnwl-gray3);
+    --burn-light:    #FF3D00;
+    --glow-light:    #FF7342;
+    --cyan-light:    #00CFC0;
+  
+    /* --- Theme: Dark --- */
+    --bg-dark:       var(--rvnwl-space);
+    --text-dark:     var(--rvnwl-ivory);
+    --card-bg-dark:  var(--rvnwl-gray1);
+    --card-text-dark: #e9f4ff;
+    --card-border-dark: var(--rvnwl-gray2);
+    --burn-dark:     var(--rvnwl-ember);
+    --glow-dark:     var(--rvnwl-glow);
+    --cyan-dark:     var(--rvnwl-cyan);
+  }
+  
+  /* ======================================================================
+     RVNWL THEME TOGGLE (body[data-theme])
+     ====================================================================== */
+  body[data-theme='light'] {
+    background: var(--bg-light);
+    color: var(--text-light);
+    --card-bg:     var(--card-bg-light);
+    --card-text:   var(--card-text-light);
+    --card-border: var(--card-border-light);
+    --rvnwl-accent-burn: var(--burn-light);
+    --rvnwl-accent-glow: var(--glow-light);
+    --rvnwl-accent-cyan: var(--cyan-light);
+  }
+  body[data-theme='dark'] {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+    --card-bg:     var(--card-bg-dark);
+    --card-text:   var(--card-text-dark);
+    --card-border: var(--card-border-dark);
+    --rvnwl-accent-burn: var(--burn-dark);
+    --rvnwl-accent-glow: var(--glow-dark);
+    --rvnwl-accent-cyan: var(--cyan-dark);
+  }
+  
+  /* ======================================================================
+     RVNWL TYPOGRAPHY
+     ====================================================================== */
+  html, body, #root {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+    letter-spacing: 0.01em;
+    background: inherit;
+    color: inherit;
+  }
+  h1, h2, h3, .hero-title {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+  .brand-text, .rvnwl-logo {
+    font-family: 'Inter', 'Segoe UI', 'Roboto', Arial, sans-serif;
+    font-size: 2.15rem;
+    font-weight: 800;
+    letter-spacing: 0.22em; /* for wordmark effect */
+    color: var(--rvnwl-accent-burn);
+    display: inline-block;
+  }
+  
+  /* --- Custom double-chevron 'w' styling for SVG or span --- */
+  .rvnwl-w {
+    color: var(--rvnwl-accent-burn);
+    letter-spacing: 0;
+    font-weight: 700;
+    font-family: inherit;
+  }
+  
+  /* ======================================================================
+     CARDS & PANELS
+     ====================================================================== */
+  .card {
+    background: var(--card-bg);
+    color: var(--card-text);
+    border: 1px solid var(--card-border);
+    border-radius: 0.7rem;
+    box-shadow: 0 4px 22px rgba(0,0,0,0.16);
+  }
+  .card-header {
+    background: var(--rvnwl-gray1);
+    color: var(--rvnwl-cyan);
+    font-weight: 600;
+    letter-spacing: 0.09em;
+  }
+  
+/* ======================================================================
+   NAVBAR (top-bar) - Dashboard-aligned, max-width, centered
+   ====================================================================== */
+   .top-bar {
+    background: var(--rvnwl-space);
+    padding: .75rem 1.5rem;
+    border-bottom: 2px solid var(--rvnwl-accent-burn);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 64px;
+    width: 100%;
+  }
+  
+  /* Inner container for navbar, aligns with dashboard */
+  .top-bar-inner {
+    width: 100%;
+    max-width: 1755px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  
+  /* Brand styling */
+  .top-bar .brand-text {
+    color: var(--rvnwl-accent-burn);
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+  
+  /* Nav links, theme toggle, wallet text */
+  .top-bar .theme-toggle-btn,
+  .top-bar .navbar-nav .nav-link {
+    color: var(--rvnwl-ivory) !important;
+    background: transparent !important;
+    border: none !important;
+    opacity: 0.95;
+    transition: opacity .2s;
+  }
+  .top-bar .theme-toggle-btn:hover,
+  .top-bar .navbar-nav .nav-link:hover {
+    color: var(--rvnwl-accent-burn) !important;
+    opacity: 1;
+  }
+  .top-bar .connect-text {
+    color: var(--card-text-dark) !important;
+    opacity: 0.9;
+    transition: opacity .2s;
+  }
+  .navbar-collapse {
+    background: var(--rvnwl-space);
+  }
+  
+  /* Network logo icon */
+  .network-logo {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+  
+  /* Responsive: collapse padding on small screens */
+  @media (max-width: 991.98px) {
+    .navbar-toggler,
+    .navbar-collapse {
+      display: none !important;
+    }
+    .top-bar-inner {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+      gap: 0.6rem;
+    }
+  }
+  
+  /* ======================================================================
+     BUTTONS
+     ====================================================================== */
+  .btn-primary {
+    background: linear-gradient(90deg, var(--rvnwl-accent-burn) 0%, var(--rvnwl-accent-glow) 100%);
+    color: var(--rvnwl-space);
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 2.25rem;
+    box-shadow: 0 2px 8px 0 rgba(255,92,30,0.09);
+    transition: background .18s, color .18s;
+  }
+  .btn-primary:hover, .btn-primary:focus {
+    background: linear-gradient(90deg, var(--rvnwl-accent-glow) 0%, var(--rvnwl-accent-burn) 100%);
+    color: var(--rvnwl-ivory);
+  }
+  .btn-secondary {
+    background: var(--rvnwl-accent-cyan);
+    color: var(--rvnwl-space);
+    font-weight: 600;
+    border-radius: 0.5rem;
+  }
+  .btn-secondary:hover, .btn-secondary:focus {
+    background: var(--rvnwl-accent-burn);
+    color: var(--rvnwl-ivory);
+  }
+  
+  /* ======================================================================
+     SPECIAL ELEMENTS
+     ====================================================================== */
+  /* For double-chevron 'w' in logo */
+  .rvnwl-logo .rvnwl-w {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-weight: 700;
+    color: var(--rvnwl-accent-burn);
+    letter-spacing: 0;
+  }
+  
+  /* For animated burnRenew SVG sigil */
+  #rvnwl-sigil {
+    stroke: var(--rvnwl-accent-burn);
+    animation: burnRenew 3s ease-in-out infinite;
+    transform-origin: 50% 50%;
+  }
+  
+  /* burnRenew animation (SVG path morphing needs JS or SMIL for true morph) */
+  @keyframes burnRenew {
+    0% { stroke: var(--rvnwl-accent-burn); opacity: 1; }
+    33% { stroke: var(--rvnwl-accent-glow);}
+    67% { stroke: var(--rvnwl-accent-cyan);}
+    100% { stroke: var(--rvnwl-accent-burn); opacity: .92; }
+  }
+  
+  /* Accent utilities */
+  .text-burn { color: var(--rvnwl-accent-burn) !important; }
+  .text-cyan { color: var(--rvnwl-accent-cyan) !important; }
+  .bg-burn { background: var(--rvnwl-accent-burn) !important; }
+  .bg-cyan { background: var(--rvnwl-accent-cyan) !important; }
+  
+/* ======================================================================
+   CARDS & SHARED PANELS
+   ====================================================================== */
+   .card {
+    background-color: var(--card-bg);
+    color: var(--card-text);
+    border: 1px solid var(--card-border);
+    margin-bottom:1rem;
+  }
+  
+  /* ======================================================================
+     CARD HEADER — match table header styling
+     ====================================================================== */
+  body[data-theme='light'] .card-header {
+    background-color: var(--gray-100);
+    color: var(--text-light);
+  }
+  
+  body[data-theme='dark'] .card-header {
+    background-color: var(--gray-800);
+    color: var(--card-text);
+  }
+  
+  
+  /* Utility for equal-height card columns */
+  .row.align-items-stretch > [class*="col-"] { display:flex; flex-direction:column; }
+  
+  /* ======================================================================
+     ALERT OVERRIDES
+     ====================================================================== */
+  .alert-warning {
+    background-color: #fff3cd;
+    border-color:   #ffeeba;
+    color: #856404;
+  }
+  body[data-theme='dark'] .alert-warning {
+    background-color:#333847;
+    border:none;
+    color: var(--card-text);
+  }
+  
+  /* ======================================================================
+     CHART HELPERS
+     ====================================================================== */
+  .chart-container { min-width:600px; min-height:400px; }
+  
+/* =========================
+   LANDING PAGE CONTAINER
+   ========================= */
+   .landing-page {
+    background: var(--bg-dark, #0d1117);
+    color: var(--text-dark, #fff);
+    min-height: 100vh;
+    padding: 6rem 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @media (min-width: 640px) {
+    .landing-page { padding: 8rem 2rem 3rem; }
+  }
+  
+  .landing-content {
+    width: 100%;
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* =========================
+     HERO SECTION HEADLINES
+     ========================= */
+  .landing-page h1,
+  .landing-page .hero-title {
+    font-size: 3.1rem;
+    font-weight: 800;
+    letter-spacing: 0.025em;
+    margin-bottom: 0.7rem;
+    line-height: 1.13;
+    text-align: center;
+    text-shadow: 0 2px 32px rgba(12,242,224,0.10);
+  }
+  @media (max-width: 800px) {
+    .landing-page h1, .landing-page .hero-title { font-size: 1.8rem; }
+  }
+  
+  .landing-page p.hero-subtitle {
+    font-size: 1.22rem;
+    max-width: 650px;
+    color: var(--card-text);
+    opacity: 0.85;
+    margin: 0 auto 2.5rem auto;
+    text-align: center;
+    line-height: 1.45;
+  }
+  .phero {
+    font-size: 1rem;
+    max-width: 1800px;
+    color: var(--card-text);
+    opacity: 0.85;
+    margin: 2.5rem auto 2.5rem auto;
+    text-align: center;
+    line-height: 1.45;
+  }
+  
+  /* =========================
+     HERO CTA BUTTON (PROMINENT)
+     ========================= */
+  .landing-page .btn-primary {
+    background: linear-gradient(90deg, var(--rvnwl-accent-burn) 0%, var(--rvnwl-accent-glow) 100%);
+    color: var(--rvnwl-space);
+    font-size: 1.22rem;
+    font-weight: 600;
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 28px 0 rgba(255,92,30,0.22);
+    letter-spacing: 0.01em;
+    padding: 1.1rem 2.5rem;
+    border: none;
+    transition: box-shadow 0.2s, background 0.22s;
+    cursor: pointer;
+  }
+  .landing-page .btn-primary:hover,
+  .landing-page .btn-primary:focus {
+    background: linear-gradient(90deg, var(--rvnwl-accent-glow) 0%, var(--rvnwl-accent-burn) 100%);
+    color: var(--rvnwl-ivory);
+    box-shadow: 0 8px 36px 0 rgba(12,242,224,0.16), 0 1.5px 4px 0 rgba(255,92,30,0.09);
+  }
+  
+  /* If you want a button row: */
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 2.5rem 0;
+  }
+
+  /* --- Button Row for Hero --- */
+.hero-btn-row {
+  gap: 1.1rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media (max-width: 600px) {
+  .hero-btn-row { flex-direction: column; gap: 0.9rem; }
+}
+
+/* Ensure .hero-btn-aligned uses the same max-width as .info-grid */
+.hero-btn-aligned {
+  display: grid;
+  grid-template-columns: 1fr 1fr;    /* two equal-width columns */
+  gap: 1.5rem;                         /* match .info-grid gap */
+  max-width: 1040px;                 /* match .info-grid width */
+  width: 100%;
+  margin: 2.5rem auto ;
+  padding: 0;
+}
+
+.hero-btn-aligned .btn-primary,
+.hero-btn-aligned .btn-secondary {
+  width: 100%;                       /* fill grid cell */
+  font-size: 1.17rem;
+  margin: 0;                         /* reset any button margin */
+  border-radius: 0.6rem;             /* match .info-card border-radius visually */
+  box-sizing: border-box;
+}
+
+/* On mobile, stack vertically and full width */
+@media (max-width: 700px) {
+  .hero-btn-aligned {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+    max-width: 98vw;
+  }
+  .hero-btn-aligned .btn-primary,
+  .hero-btn-aligned .btn-secondary {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* --- Parallax Floating Card Effects --- */
+.parallax-cards .parallax-card {
+  will-change: transform;
+  transition: transform 0.33s cubic-bezier(.44,.14,.33,1), box-shadow 0.19s, border-color 0.21s;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  /* Subtle depth */
+}
+.parallax-cards .parallax-card:hover {
+  box-shadow: 0 16px 40px rgba(246,61,32,0.12), 0 1.5px 6px 0 rgba(255,92,30,0.09);
+  transform: translateY(-9px) scale(1.028);
+  border-color: var(--rvnwl-accent-burn) !important;
+  z-index: 3;
+}
+
+/* --- Scroll Parallax: gently floats upward as you scroll --- */
+@media (min-width: 641px) {
+  .parallax-cards .parallax-card {
+    /* JS will set transform dynamically for parallax */
+  }
+}
+
+/* --- Parallax Table Effect --- */
+.parallax-table {
+  will-change: transform;
+  transition: box-shadow 0.19s, transform 0.38s cubic-bezier(.48,.11,.19,1);
+  /*box-shadow: 0 12px 46px 0 rgba(246,61,32,0.12), 0 1.5px 8px 0 rgba(255,92,30,0.10);*/
+  border-radius: 1.18rem;
+  background: linear-gradient(134deg, #161a22 0%, #232834 100%);
+  /*padding: 2.6rem 2rem 2.2rem 2rem;*/
+}
+
+/* --- Animate table section on scroll --- */
+@media (min-width: 641px) {
+  .parallax-table {
+    /* JS will set transform dynamically for parallax */
+  }
+}
+
+@media (max-width: 1100px) {
+  .table-responsive {
+    overflow-x: auto;
+    min-width: 0;
+    padding-bottom: 1.2rem;
+  }
+  .table {
+    min-width: 860px;
+  }
+}
+  /* =========================
+     NAVBAR CTA BUTTON (OUTLINE)
+     ========================= */
+  .top-bar .btn-primary {
+    background: transparent !important;
+    border: 2px solid var(--rvnwl-accent-burn) !important;
+    color: var(--rvnwl-accent-burn) !important;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.45rem;
+    padding: 0.45rem 1.5rem;
+    box-shadow: none;
+    transition: background 0.15s, color 0.15s;
+  }
+  .top-bar .btn-primary:hover,
+  .top-bar .btn-primary:focus {
+    background: var(--rvnwl-accent-burn) !important;
+    color: var(--rvnwl-ivory) !important;
+  }
+  
+  .heartbeat-separator {
+    margin: 0.1rem auto 2rem auto;
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  @media (max-width: 600px) {
+    .heartbeat-separator {
+      margin: 1.1rem auto 1.2rem auto;
+      max-width: 98vw;
+    }
+  }
+
+  /* =========================
+     INFO GRID & CARD LAYOUT
+     ========================= */
+  .info-grid {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto 3rem auto;
+    margin-top: 0 !important;
+    display: grid;
+    gap: 2rem;
+  }
+  @media (min-width: 640px) {
+    .info-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 639px) {
+    .info-grid { grid-template-columns: 1fr; }
+  }
+  @media (min-width: 1600px) {
+    .landing-content, .info-grid { max-width: 1600px; }
+  }
+  
+  /* =========================
+     INFO CARDS
+     ========================= */
+  .info-card {
+    background: linear-gradient(134deg, #13171f 0%, #181f26 100%);
+    color: var(--card-text);
+    padding: 2rem 1.5rem 1.25rem;
+    border-radius: 1.1rem;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.16);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    min-height: 180px;
+    border: 1.5px solid var(--card-border);
+    transition: box-shadow .18s, border-color .19s, transform .14s;
+  }
+  .info-card:hover {
+    border-color: var(--rvnwl-accent-burn);
+    box-shadow: 0 8px 32px 0 rgba(246,61,32,0.13), 0 1.5px 4px 0 rgba(255,92,30,0.09);
+    transform: translateY(-2px) scale(1.016);
+  }
+  .info-card-content { flex-grow: 1; }
+  .info-card-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1.25rem;
+  }
+  
+  /* =========================
+     INFO CARD HEADINGS
+     ========================= */
+  .info-card h2 {
+    font-size: 1.28rem;
+    font-weight: 600;
+    color: var(--rvnwl-accent-burn);
+    letter-spacing: 0.01em;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+  }
+  .info-card p {
+    font-size: 1.08rem;
+    opacity: 0.93;
+    line-height: 1.45;
+  }
+  
+  /* =========================
+     CARD BUTTONS
+     ========================= */
+  .btn-secondary {
+    background: var(--rvnwl-accent-cyan);
+    color: var(--rvnwl-space);
+    font-weight: 500;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.7rem 2rem;
+    font-size: 1.08rem;
+    box-shadow: 0 1.5px 8px 0 rgba(12,242,224,0.10);
+    transition: background .2s, color .2s;
+    cursor: pointer;
+  }
+  .btn-secondary:hover,
+  .btn-secondary:focus {
+    background: var(--rvnwl-accent-burn);
+    color: var(--rvnwl-ivory);
+  }
+
+  .btn-card {
+      background: transparent;
+     color: var(--rvnwl-accent-burn);
+     font-weight: 500;
+     border: 2.5px solid var(--rvnwl-accent-burn);
+     border-radius: 0.5rem;
+     padding: 0.7rem 2rem;
+     font-size: 1.08rem;
+     box-shadow: 0 1.5px 8px 0 rgba(12,242,224,0.10);
+     transition: background .2s, color .2s;
+     cursor: pointer;
+   }
+   .btn-card:hover,
+   .btn-card:focus {
+     background: var(--rvnwl-accent-burn);
+     color: var(--rvnwl-ivory);
+   }
+
+
+  /* Ensures footer content is horizontally aligned like button */
+  .community-links-footer {
+    justify-content: flex-end;
+    margin-top: 1.25rem;
+  }
+
+  .community-links {
+    display: flex;
+    gap: 1.1rem;  /* Space between icons */
+  }
+
+  .community-icon {
+    color: var(--rvnwl-accent-burn);
+    transition: color 0.2s, transform 0.17s;
+    opacity: 0.98;
+  }
+
+  .community-icon.discord:hover {
+    color: #7289da;
+    transform: scale(1.15) rotate(-3deg);
+  }
+  .community-icon.telegram:hover {
+    color: #229ED9;
+    transform: scale(1.15) rotate(2deg);
+  }
+  .community-icon.github:hover {
+    color: #fc4422; /* accent burn */
+    transform: scale(1.15) rotate(-2deg);
+  }
+  .community-icon.gitbook:hover {
+    color: #38d39f;
+    transform: scale(1.13) rotate(2deg);
+  }
+  .info-card-footer.info-card-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  @media (max-width: 640px) {
+    .info-card-footer.info-card-footer-row {
+      flex-direction: column;
+      gap: 1rem;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+  }
+
+  /* =============== Responsive: extra spacing for tap on mobile ============== */
+  @media (max-width: 640px) {
+    .info-card { margin-bottom: 1.3rem; }
+  }
+  
+  /* =============== Brand "w" Animation ============== */
+  .rvnwl-w {
+    animation: wBurnGlow 2.5s cubic-bezier(.4,0,.3,1) infinite alternate;
+  }
+  @keyframes wBurnGlow {
+    0%   { text-shadow: 0 0 0 #FF5C1E; }
+    40%  { text-shadow: 0 0 18px #FF5C1E, 0 0 38px #0CF2E0; }
+    100% { text-shadow: 0 0 0 #FF5C1E; }
+  }
+
+ /* --- Action Buttons Responsive Layout --- */
+.card-action-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+  justify-content: center;
+}
+.action-btn {
+  flex: 1 1 0;
+  min-width: 170px;
+  max-width: 300px;
+  font-weight: 600;
+  font-size: 1.12rem;
+  border-radius: 0.8rem;
+  padding: 0.9rem 0;
+  box-sizing: border-box;
+}
+
+/* Stack buttons full width below 1400px */
+@media (max-width: 1400px) {
+  .card-action-buttons {
+    flex-direction: column;
+    gap: 1.15rem;
+  }
+  .action-btn {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+/* --- Responsive Cards in Dashboard --- */
+@media (max-width: 1200px) {
+  .revamp-page .row > [class*="col-"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* --- Pie Charts Responsive in GlobalStatsCard --- */
+@media (max-width: 1200px) {
+  .global-stats-card .row {
+    flex-direction: column !important;
+  }
+  .global-stats-card .col-md-6 {
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin-bottom: 1.25rem;
+  }
+}
+
+/* Responsive pie charts row inside GlobalStatsCard */
+.stats-pies-row {
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  justify-content: space-between;
+}
+
+.stats-pie-wrap {
+  flex: 1 1 0;
+  min-width: 0;
+}
+/* Stack the pie charts vertically below 600px */
+@media (max-width: 600px) {
+  .stats-pies-row {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+}
+
+/* Example for stacking stats cards below 1200px */
+@media (max-width: 1200px) {
+  .dashboard-row {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+}
+
+/* Keep pie chart containers nicely spaced */
+.stats-pie-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
+  
+/* ======================================================================
+   REVAMP DASHBOARD & TABLES: LAYOUT, CARDS, TABLES, UTILITIES
+   ====================================================================== */
+
+/* Main dashboard page container */
+.revamp-page {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 3.5rem 1.2rem 2rem;
+  background: inherit;
+  color: inherit;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media (max-width: 1050px) {
+  .revamp-page { max-width: 98vw; padding-left: 0.25rem; padding-right: 0.25rem; }
+}
+
+/* Responsive dashboard row for top stats/charts */
+.dashboard-row {
+  display: flex;
+  flex-direction: row;
+  gap: 2.4rem;
+}
+@media (max-width: 1200px) {
+  .dashboard-row {
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+}
+
+/* Card styling for dashboard (reuse .card for Bootstrap cards and custom) */
+.card, .dashboard-card {
+  /*background: var(--card-bg);*/
+  color: var(--card-text);
+  border: 1.5px solid var(--card-border);
+  border-radius: 0.8rem;
+ /* box-shadow: 0 8px 34px 0 rgba(12,242,224,0.12), 0 1.5px 6px 0 rgba(255,92,30,0.08);*/
+  padding: 2.2rem 1.8rem 1.2rem;
+  /*margin-bottom: 1.5rem;*/
+  min-height: 320px;
+ /* transition: box-shadow .17s, border-color .18s, transform .13s;*/
+}
+/*.card:hover, .dashboard-card:hover {
+  border-color: var(--rvnwl-accent-cyan);
+  box-shadow: 0 12px 38px 0 rgba(12,242,224,0.17), 0 2.5px 6px 0 rgba(255,92,30,0.12);
+  transform: scale(1.013);
+}*/
+
+/* Card header—same as Bootstrap, with accent color and bolder font */
+.card-header, .dashboard-card .card-header {
+  background: none;
+  color: var(--rvnwl-accent-cyan);
+  font-weight: 800;
+  font-size: 1.19rem;
+  text-transform: uppercase;
+  /*border-bottom: 1px solid var(--rvnwl-accent-cyan);*/
+  padding-bottom: .2rem;
+  margin-bottom: .1rem;
+  letter-spacing: 0.03em;
+}
+body[data-theme='light'] .card-header { background-color: var(--gray-100); color: var(--text-light); }
+body[data-theme='dark'] .card-header  { background-color: var(--gray-800); color: var(--card-text); }
+
+/* Card body content and chart container */
+.card-body p, .dashboard-card-body p {
+  font-size: 1.09rem;
+  color: var(--card-text);
+  opacity: 0.95;
+}
+.card .chart-container, .dashboard-card .chart-container {
+  min-width: 240px;
+  min-height: 230px;
+  margin: 1.5rem 0;
+  background: transparent;
+}
+
+/* Card titles—cyan accent, bold */
+.card-title, .dashboard-card-title {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  font-size: 1.23rem;
+  font-weight: 800;
+  color: var(--rvnwl-accent-cyan);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+/* Responsive margins for cards and table containers */
+@media (max-width: 640px) {
+  .card, .dashboard-card, .table-responsive { margin-left: 0; margin-right: 0; padding: 1.2rem 0.5rem; }
+}
+
+/* Constraint for ultra-wide screens */
+@media (min-width: 1500px) {
+  .revamp-page, .table-responsive, .dashboard-row { max-width: 1800px; }
+}
+
+/* =========================
+   TABLES & SEARCH BAR
+   ========================= */
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto 2.5rem auto;
+}
+.all-assets-card {
+  overflow-x: auto;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto 2.5rem auto;
+  border-radius: 0.75rem;
+  background: var(--card-bg);
+  box-shadow: 0 4px 20px rgba(12,242,224,0.05);
+  border: 1.5px solid var(--card-border);
+  border-radius: 1.2rem 19.2px;
+}
+.table {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+}
+.table th,
+.table td {
+  border-color: var(--card-border) !important;
+}
+body[data-theme='light'] .table thead th {
+  background-color: var(--gray-100);
+  color: var(--text-light);
+}
+body[data-theme='dark'] .table thead th {
+  background-color: var(--gray-800);
+  color: var(--card-text);
+}
+body[data-theme='dark'] .table tbody td {
+  background-color:#272727;
+  color: var(--card-text);
+}
+body[data-theme='dark'] .table tbody tr {
+  background-color: var(--card-bg);
+}
+body[data-theme='light'] .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: var(--gray-50);
+}
+body[data-theme='dark'] .table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: var(--gray-850);
+}
+body[data-theme='dark'] .table-hover > tbody > tr:hover {
+  background-color: var(--gray-800);
+}
+
+/* =========================
+   SEARCH INPUTS (dark/light)
+   ========================= */
+.revamp-page .form-control {
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+body[data-theme='light'] .revamp-page .form-control {
+  background-color: var(--card-bg-light);
+  color: var(--text-light);
+  border: 1px solid var(--card-border-light);
+}
+body[data-theme='dark'] .revamp-page .form-control {
+  background-color: var(--gray-800);
+  color: var(--card-text);
+  border: 1px solid var(--card-border);
+}
+.revamp-page .form-control::placeholder {
+  color: var(--card-text);
+  opacity: .6;
+}
+
+/* =========================
+   BUTTONS — BRAND VARIANTS
+   ========================= */
+.btn-primary {
+  background: linear-gradient(90deg, var(--rvnwl-accent-burn) 0%, var(--rvnwl-accent-glow) 100%);
+  color: var(--rvnwl-space);
+  font-weight: 600;
+  font-size: 1.09rem;
+  border-radius: 0.55rem;
+  padding: 0.9rem 2.3rem;
+  border: none;
+  box-shadow: 0 2px 12px 0 rgba(255,92,30,0.07);
+  transition: background .19s, color .17s, box-shadow .19s;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background: linear-gradient(90deg, var(--rvnwl-accent-glow) 0%, var(--rvnwl-accent-burn) 100%);
+  color: var(--rvnwl-ivory);
+ /* box-shadow: 0 8px 32px 0 rgba(12,242,224,0.13), 0 1.5px 4px 0 rgba(255,92,30,0.06);*/
+}
+.btn-success, .btn-warning, .btn-danger {
+  font-weight: 600;
+  font-size: 1.06rem;
+  border-radius: 0.5rem;
+  padding: 0.77rem 1.5rem;
+}
+.btn-success { background: var(--rvnwl-success); color: #151a18; border: none; }
+.btn-success:hover { background: #10c391; color: #fff; }
+.btn-warning { background: var(--rvnwl-warning); color: #332405; border: none; }
+.btn-warning:hover { background: #ffe478; color: #fff; }
+.btn-danger  { background: var(--rvnwl-danger); color: #fff; border: none; }
+.btn-danger:hover  { background: #fc3c56; color: #fff; }
+
+/* ======================================================================
+   FULL-SCREEN LOADING OVERLAY
+   ====================================================================== */
+.loading-overlay,
+.dashboard-loading-overlay,
+.revamp-page-loading-overlay {
+  position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+  background-color: var(--overlay-bg); z-index:1050;
+}
+.loading-overlay .spinner-border,
+.dashboard-loading-overlay .spinner-border,
+.revamp-page-loading-overlay .spinner-border {
+  width:3rem; height:3rem; color:var(--card-text);
+}
+
+/* ======================================================================
+   CARD HEADER — match table header styling
+   ====================================================================== */
+body[data-theme='light'] .card-header { background-color: var(--gray-100); color: var(--text-light); }
+body[data-theme='dark'] .card-header { background-color: var(--gray-800); color: var(--card-text); }
+
+/* ======================================================================
+   RESPONSIVENESS & UTILITIES
+   ====================================================================== */
+@media (max-width: 991.98px) {
+  .navbar-collapse { background: var(--rvnwl-space); }
+}
+@media (max-width: 540px) {
+  .brand-text, .rvnwl-logo { font-size: 1.15rem; }
+}
+
+/* ======================================================================
+   MOBILE NAVIGATION — always dark bg, light icons, hover + active
+   ====================================================================== */
+   .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    /* Always use a solid background for best clarity */
+    background: #131620; /* or use: background: rgba(20,23,34,0.98); */
+    z-index: 50;
+    border-top: 1.5px solid rgba(255,255,255,0.08); /* subtle separation */
+    box-shadow: 0 -2px 16px 0 rgba(0,0,0,0.19);    /* optional: shadow for depth */
+  }
+  
+  .mobile-nav-link {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.75rem 0;
+    color: var(--card-text-dark) !important;
+    font-size: 1.5rem;
+    transition: background-color 0.2s, color 0.2s;
+    position: relative;
+  }
+  .mobile-nav-link:hover {
+    background-color: rgba(255,255,255,0.08);
+    color: var(--rvnwl-accent-cyan, #6fffe9) !important;
+  }
+  .mobile-nav-link.active {
+    background-color: rgba(255,255,255,0.17);
+    color: var(--brand-ivory, #fff) !important;
+  }
+/* ======================================================================
+   RVNWL MODALS (revamp-family, dark/light, responsive, glass-card)
+   ====================================================================== */
+
+/* Modal Dialog Sizing and Centering */
+.revamp-modal-dialog {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 60px);
+  z-index: 1200 !important;
+}
+
+/* Modal Core Layout, Brand Glass Effect */
+.revamp-modal {
+  max-width: 440px;
+  width: 100%;
+  margin: auto;
+  border-radius: 1.15rem;
+  background: var(--card-bg);
+  color: var(--card-text);
+  border: 1.5px solid var(--card-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 98vh;
+  z-index: 1200 !important;
+}
+
+/* Modal Content Reset */
+.revamp-modal .modal-content {
+  background: transparent;
+  border: none;
+  border-radius: 1.15rem;
+  box-shadow: none;
+  padding: 0;
+}
+
+/* Modal Body Scroll for Overflow Content */
+.revamp-modal .modal-body {
+  overflow-y: auto;
+  max-height: 64vh;
+  padding-bottom: 0.5rem;
+}
+
+/* Modal Header: Brand Cyan Accent, Spacing */
+.revamp-modal .modal-header {
+  background: transparent;
+  border-bottom: none;
+  border-radius: 1.1rem 1.1rem 0 0;
+  padding: 1.25rem 1.7rem 0.7rem 1.7rem;
+}
+.revamp-modal .modal-title {
+  color: var(--rvnwl-accent-cyan);
+  font-weight: 800;
+  font-size: 1.16rem;
+  letter-spacing: 0.015em;
+  text-transform: uppercase;
+}
+
+/* Form Controls (Inputs/Selects) - Unified */
+.revamp-modal .form-control,
+.revamp-modal .form-select {
+  border-radius: 0.7rem;
+  min-height: 2.55rem;
+  font-size: 1.06rem;
+  background-color: var(--gray-800);
+  color: var(--card-text);
+  border: 1px solid var(--card-border);
+  transition: background-color 0.17s, color 0.17s, border-color 0.17s;
+}
+.revamp-modal .form-control::placeholder {
+  color: var(--card-text);
+  opacity: 0.6;
+}
+
+/* Light Theme Modal Overrides */
+body[data-theme='light'] .revamp-modal {
+  background: #fff;
+  color: #222;
+  border: 1.5px solid #e3e5e7;
+}
+body[data-theme='light'] .revamp-modal .form-control,
+body[data-theme='light'] .revamp-modal .form-select {
+  background-color: var(--card-bg-light) !important;
+  color: var(--text-light) !important;
+  border: 1px solid var(--card-border-light) !important;
+}
+body[data-theme='light'] .revamp-modal .form-control::placeholder {
+  color: var(--text-light);
+  opacity: 0.6;
+}
+body[data-theme='light'] .revamp-modal .dropdown-menu {
+  background-color: var(--card-bg-light) !important;
+  color: var(--text-light) !important;
+  border: 1px solid var(--card-border-light) !important;
+}
+
+/* Dark Theme Modal Enhancements */
+body[data-theme='dark'] .revamp-modal {
+  background: linear-gradient(136deg, #161a22 0%, #232834 100%);
+  color: #e9f4ff;
+  border: 1.5px solid #232934;
+}
+
+/* Modal Buttons - Consistent Style */
+.revamp-modal .btn-success,
+.revamp-modal .btn-secondary {
+  min-width: 108px;
+  border-radius: 0.85rem;
+  font-weight: 700;
+  font-size: 1.07rem;
+}
+.revamp-modal .btn-success:disabled {
+  background: #b5efdf !important;
+  color: #151a18 !important;
+}
+
+/* Loading/Processing Overlay Inside Modals */
+.processing-overlay {
+  position: absolute;  /* Key: Only overlay the modal body */
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18,23,32, 0.92); /* Subtle dark, nearly opaque for modals */
+  border-radius: 16px; /* Match your modal/dialog border radius */
+  z-index: 10; /* Sits on top of modal content, but inside the modal */
+  pointer-events: all;
+}
+
+.processing-text {
+  margin-top: 1rem;
+  color: var(--rvnwl-accent-cyan, #9beffc);
+  font-weight: 600;
+  font-size: 1.12em;
+}
+
+/* T&C modal always above other modals */
+.tandc-modal,
+.tandc-modal .modal-dialog,
+.tandc-modal .modal-content {
+  z-index: 2000 !important;
+  position: relative;
+}
+.tandc-modal-backdrop {
+  z-index: 1999 !important;
+  position: fixed;
+}
+
+/* Responsive: Modal for Mobile Screens */
+@media (max-width: 575px) {
+  .revamp-modal, .modal-dialog.revamp-modal-dialog {
+    max-width: 98vw;
+    min-width: 0;
+    border-radius: 0.3rem;
+  }
+}
+
+.delist-modal .modal-header {
+  border-radius: 1.1rem 1.1rem 0 0;
+}
+.delist-modal .modal-footer {
+  border-radius: 0 0 1.1rem 1.1rem;
+}
+
+.asset-info-modal .modal-header {
+  border-radius: 1.1rem 1.1rem 0 0;
+}
+.asset-info-modal .modal-footer {
+  border-radius: 0 0 1.1rem 1.1rem;
+}
+
+/* ======================================================================
+   UTILITY COLORS, SUBTEXT, REFRESH BUTTONS
+   ====================================================================== */
+.rev-subtext { color: #6c757d; }
+body[data-theme='dark'] .rev-subtext { color: #c1c5cc !important; }
+body:not(.dark) .btn-outline-light.refresh-btn {
+  color: #383d43 !important;
+  border-color: #42484e !important;
+}
+body:not(.dark) .btn-outline-light.refresh-btn:hover,
+body:not(.dark) .btn-outline-light.refresh-btn:focus {
+  background-color: #79807f !important;
+  color: #fff !important;
+}
+/* ================================
+   Dashboard Cards: Responsive Grid
+   ================================ */
+
+   .dashboard-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1800px;
+    margin: 0 auto 2.5rem auto;
+    width: 100%;
+  }
+  .dashboard-metrics-grid .dashboard-card {
+    min-width: 0;
+    max-width: 566px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  /* Tablet: Two columns */
+  @media (max-width: 991px) {
+    .dashboard-metrics-grid {
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      max-width: 97vw;
+    }
+    .dashboard-metrics-grid .dashboard-card {
+      max-width: 100%;
+      padding: 1.1rem 0.4rem 1.1rem 0.4rem;
+    }
+  }
+  
+  /* Mobile: Stack vertically */
+  @media (max-width: 700px) {
+    .dashboard-metrics-grid {
+      /* Stop using the full viewport width */
+      /* width: 100vw; */
+      width: 100%;
+      /* max-width: 100vw; */
+      max-width: none;
+  
+      /* Center it again */
+      margin: 0 auto;
+  
+      /* Re–introduce the same horizontal padding as your container */
+      padding: 0 1.2rem;
+  
+      /* Keep your existing gap */
+      gap: 1.1rem;
+      grid-template-columns: 1fr;
+    }
+  
+    .dashboard-metrics-grid .dashboard-card {
+      /* you can leave your per‐card padding alone, or tweak if you like */
+      padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+      margin: 0;
+      max-width: none;
+    }
+  }
+  
+  /* Optional: Header wrap for very narrow screens */
+  .card-header, .dashboard-card .card-header {
+    word-break: break-word;
+    white-space: normal;
+    text-overflow: ellipsis;
+  }
+
+  /* Desktop: Card is max 1880px wide and centered */
+.price-history-scroll-outer {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto 2rem auto;
+  overflow-x: visible;
+}
+
+/* Card styling remains as before */
+.price-history-card {
+  width: 100%;
+  max-width: 1800px;
+  min-width: 0;
+  margin: 0 auto;
+}
+.price-history-card-body {
+  min-height: 370px;
+  padding: 2.2rem 2.2rem 1.4rem;
+  border-radius: 10px;
+  background: inherit;
+}
+
+/* Responsive: On <=991px, make the OUTER scrollable and the card a fixed width */
+@media (max-width: 991px) {
+  .price-history-scroll-outer {
+    max-width: 100vw;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .price-history-card {
+    min-width: 900px;
+    max-width: 900px;
+    width: 900px;
+    margin: 0;
+  }
+}
+/* Polished Table & Card */
+.dashboard-card.parallax-table {
+  background: linear-gradient(134deg, #161a22 0%, #232834 100%);
+  border-radius: 1.18rem;
+  box-shadow: 0 4px 20px rgba(12,242,224,0.07);
+  border: 1.5px solid var(--rvnwl-gray2);
+  padding: 2.4rem 2rem 2.2rem 2rem;
+  margin-bottom: 2.6rem;
+}
+.revamp-table {
+  background: transparent;
+  font-size: 1.07rem;
+}
+.revamp-table th, .revamp-table thead th {
+  font-weight: 500 !important;
+  color: var(--rvnwl-ivory) !important;
+  letter-spacing: 0.02em;
+  background: none;
+  border-bottom: 1.5px solid var(--rvnwl-gray2) !important;
+  text-transform: none;
+}
+.revamp-table td {
+  font-weight: 500;
+  border-top: 1px solid var(--rvnwl-gray2) !important;
+  vertical-align: middle;
+}
+.revamp-table a, .revamp-table span {
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 1.07rem;
+}
+.revamp-table tr:hover td {
+  background: #171c23;
+  transition: background 0.18s;
+}
+@media (max-width: 1050px) {
+  .dashboard-card.parallax-table { padding: 1.3rem 0.7rem 1.3rem 0.7rem; }
+  .table-responsive { padding: 0.7rem 0.2rem; }
+}
+
+/* Further reduce padding and height for very small screens */
+@media (max-width: 600px) {
+  .price-history-card-body {
+    padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+    min-height: 180px;
+  }
+}
+
+/* ======================================================================
+   HARTBEAT PULSE LINE
+   ====================================================================== */
+
+   .pulse-container {
+    position: relative;
+    width: min(420px, 80vw);   /* Scales down on mobile */
+    height: 90px;
+    margin: 16px auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: width 0.25s, height 0.25s;
+  }
+  
+  .pulse, .pulse-follow {
+    width: 4px;
+    height: 6px;
+    position: absolute;
+    top: 45px; /* baseline for y=0 */
+    left: 0;
+    border-radius: 3px;
+    box-shadow: 0 0 6px 0 var(--rvnwl-accent-burn, #fc4422);
+    background: var(--rvnwl-accent-burn, #fc4422);
+  }
+  
+  .pulse {
+    z-index: 3;
+    animation: pulse-move 7s linear infinite;
+  }
+  
+  .pulse-follow {
+    z-index: 2;
+    opacity: 0.22;
+    animation: pulse-move 7s linear infinite;
+  }
+  
+  @media (max-width: 600px) {
+    .pulse-container {
+      width: 96vw;
+      height: 54px;
+    }
+    .pulse, .pulse-follow {
+      width: 3px;
+      height: 4px;
+      top: 24px;
+    }
+  }
+  
+  @keyframes pulse-move {
+    0%   { transform: translate(0, 0); }
+    8%   { transform: translate(38px, 0); }
+    12%  { transform: translate(46px, 16px);}
+    14%  { transform: translate(54px, -37px);}
+    17%  { transform: translate(62px, 28px);}
+    19%  { transform: translate(70px, -16px);}
+    20%  { transform: translate(76px, 0);}
+    22%  { transform: translate(114px, 0);}
+    25%  { transform: translate(122px, 15px);}
+    27%  { transform: translate(130px, -27px);}
+    29%  { transform: translate(138px, 29px);}
+    32%  { transform: translate(146px, -16px);}
+    33%  { transform: translate(152px, 0);}
+    52%  { transform: translate(194px, 0);}
+    54%  { transform: translate(202px, 24px);}
+    56%  { transform: translate(210px, -36px);}
+    58%  { transform: translate(218px, 31px);}
+    60%  { transform: translate(226px, -19px);}
+    62%  { transform: translate(234px, 0);}
+    66%  { transform: translate(270px, 0);}
+    68%  { transform: translate(278px, 14px);}
+    70%  { transform: translate(286px, -25px);}
+    72%  { transform: translate(294px, 24px);}
+    74%  { transform: translate(302px, -12px);}
+    76%  { transform: translate(308px, 0);}
+    100% { transform: translate(370px, 0);}
+  }
+  
+
+  .dropdown-skeleton {
+    height: 38px;
+    width: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #c1f5f3 25%, #e0e0e0 50%, #c1f5f3 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.4s ease-in-out infinite;
+  }
+  @keyframes skeleton-loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+/* ===================== RVNWL TABLES: THEME-AWARE, UNIFIED, RESPONSIVE ===================== */
+
+/* ===== BASE TABLE BACKGROUNDS: Full Coverage ===== */
+body[data-theme='dark'] .table,
+body[data-theme='dark'] .table-responsive,
+body[data-theme='dark'] .all-assets-card,
+body[data-theme='dark'] .revamp-table {
+  background: var(--card-bg-dark) !important;
+}
+
+body[data-theme='light'] .table,
+body[data-theme='light'] .table-responsive,
+body[data-theme='light'] .all-assets-card,
+body[data-theme='light'] .revamp-table {
+  background: var(--card-bg-light) !important;
+}
+
+/* ===== TABLE CELL COLORS ===== */
+body[data-theme='dark'] .table th,
+body[data-theme='dark'] .table td,
+body[data-theme='dark'] .revamp-table th,
+body[data-theme='dark'] .revamp-table td {
+  background: var(--card-bg-dark) !important;
+  color: var(--card-text-dark) !important;
+}
+
+body[data-theme='light'] .table th,
+body[data-theme='light'] .table td,
+body[data-theme='light'] .revamp-table th,
+body[data-theme='light'] .revamp-table td {
+  background: var(--card-bg-light) !important;
+  color: var(--text-light) !important;
+}
+
+/* ===== HOVER STATES ===== */
+body[data-theme='dark'] .table-hover > tbody > tr:hover > td,
+body[data-theme='dark'] .revamp-table tr:hover > td {
+  background: #171c23 !important;
+}
+body[data-theme='light'] .table-hover > tbody > tr:hover > td,
+body[data-theme='light'] .revamp-table tr:hover > td {
+  background: #f2f7fd !important;
+}
+
+/* ===== ACTIONS COLUMN: Unified (no borders, full-bg) ===== */
+.table td.actions-cell,
+.table th.actions-cell,
+.revamp-table td.actions-cell,
+.revamp-table th.actions-cell {
+  border-left: none !important;
+  border-right: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.table tr > td:last-child,
+.table tr > th:last-child,
+.revamp-table tr > td:last-child,
+.revamp-table tr > th:last-child {
+  border-right: none !important;
+}
+
+/* Patch: Remove left border if present in action cell */
+.table td.actions-cell,
+.revamp-table td.actions-cell {
+  border-left: none !important;
+  padding-top: 0.33rem;
+  padding-bottom: 0.33rem;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+/* Make actions-cell always look full, never see-through, even on scroll */
+body[data-theme='dark'] .table td.actions-cell,
+body[data-theme='dark'] .revamp-table td.actions-cell {
+  background: var(--card-bg-dark) !important;
+}
+body[data-theme='light'] .table td.actions-cell,
+body[data-theme='light'] .revamp-table td.actions-cell {
+  background: var(--card-bg-light) !important;
+}
+
+/* ===== Action Buttons Row ===== */
+.table .action-btns,
+.revamp-table .action-btns,
+.all-assets-action-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.56rem;
+  background: none;
+  border: none;
+}
+
+/* Mobile: Tighten up actions column on small screens */
+@media (max-width: 700px) {
+  .table td.actions-cell,
+  .revamp-table td.actions-cell {
+    min-width: 90px;
+    padding-left: 0.05rem;
+    padding-right: 0.05rem;
+  }
+}
+
+/* Patch: When horizontal scrolling, last cell always filled */
+body[data-theme='dark'] .table td:last-child,
+body[data-theme='dark'] .revamp-table td:last-child {
+  background: var(--card-bg-dark) !important;
+}
+body[data-theme='light'] .table td:last-child,
+body[data-theme='light'] .revamp-table td:last-child {
+  background: var(--card-bg-light) !important;
+}
+
+/* Extra: Remove double borders for all columns */
+.table th,
+.table td,
+.revamp-table th,
+.revamp-table td {
+  border-color: var(--card-border) !important;
+}
+
+/* Optional: Stripe alternate rows in light/dark mode for clarity */
+body[data-theme='light'] .table-striped > tbody > tr:nth-of-type(odd) {
+  background: #f7fafd !important;
+}
+body[data-theme='dark'] .table-striped > tbody > tr:nth-of-type(odd) {
+  background: #22262e !important;
+}
+
+/* Optional: Table header always bold, solid bg */
+.table th, .revamp-table th {
+  font-weight: 600;
+  background: var(--card-bg) !important;
+  color: var(--rvnwl-accent-cyan) !important;
+  letter-spacing: 0.02em;
+  border-bottom: 1.5px solid var(--rvnwl-gray2) !important;
+}
+
+/* Responsive: On very small screens, reduce table padding */
+@media (max-width: 600px) {
+  .table, .revamp-table { font-size: 0.98rem; }
+  .table th, .table td, .revamp-table th, .revamp-table td { padding: 0.41rem 0.16rem; }
+}
+

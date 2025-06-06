@@ -1,0 +1,72 @@
+{
+    "lastUpdated": "2025-06-01",
+    "disclaimer": "For informational purposes only. Connect your wallet to check live rates.",
+    "assets": [
+      {
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png",
+        "name": "Bitcoin",
+        "symbol": "BTC",
+        "rates": {
+          "ethereum": { "rate": null, "link": null },
+          "bnb":      { "rate": null, "link": null },
+          "polygon":  { "rate": "1500000.0000", "link": "https://polygonscan.com/token/CONTRACTADDRESS" },
+          "base":     { "rate": null, "link": null },
+          "arbitrum": { "rate": null, "link": null },
+          "optimism": { "rate": null,     "link": null }
+        }
+      },
+      {
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1027.png",
+        "name": "Ethereum",
+        "symbol": "ETH",
+        "rates": {
+          "ethereum": { "rate": null,     "link": null },
+          "bnb":      { "rate": null,     "link": null },
+          "polygon":  { "rate": "36000.0000", "link": "https://polygonscan.com/token/CONTRACTADDRESS" },
+          "base":     { "rate": null,     "link": null },
+          "arbitrum": { "rate": null,     "link": null },
+          "optimism": { "rate": null,     "link": null }
+        }
+      },
+      {
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/1839.png",
+        "name": "BNB",
+        "symbol": "BNB",
+        "rates": {
+          "ethereum": { "rate": null,     "link": null },
+          "bnb":      { "rate": null,     "link": null },
+          "polygon":  { "rate": "10000.0000", "link": "https://polygonscan.com/token/CONTRACTADDRESS" },
+          "base":     { "rate": null,     "link": null },
+          "arbitrum": { "rate": null,     "link": null },
+          "optimism": { "rate": null,     "link": null }
+        }
+      },
+      {
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png",
+        "name": "Solana",
+        "symbol": "SOL",
+        "rates": {
+          "ethereum": { "rate": null,     "link": null },
+          "bnb":      { "rate": null,     "link": null },
+          "polygon":  { "rate": "2000.0000", "link": "https://polygonscan.com/token/CONTRACTADDRESS" },
+          "base":     { "rate": null,     "link": null },
+          "arbitrum": { "rate": null,     "link": null },
+          "optimism": { "rate": null,     "link": null }
+        }
+      },
+      {
+        "logo": "https://s2.coinmarketcap.com/static/img/coins/64x64/5994.png",
+        "name": "Shiba Inu",
+        "symbol": "SHIB",
+        "rates": {
+          "ethereum": { "rate": null,     "link": null },
+          "bnb":      { "rate": null,     "link": null },
+          "polygon":  { "rate": "0.0060", "link": "https://polygonscan.com/token/CONTRACTADDRESS" },
+          "base":     { "rate": null,     "link": null },
+          "arbitrum": { "rate": null,     "link": null },
+          "optimism": { "rate": null,     "link": null }
+        }
+      }
+    ]
+  }
+  

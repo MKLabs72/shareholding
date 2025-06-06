@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RVNWL | Coming Soon</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="https://images.rvnwl.com/favicon-32x32.png">
+  <style>
+    :root {
+      --bg: #111217;
+      --card: #232832;
+      --accent-burn: #fc4422;
+      --accent-cyan: #1af8ee;
+      --text: #f6f8fa;
+      --muted: #bac3ce;
+    }
+    body {
+      background: var(--bg);
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      color: var(--text);
+    }
+    .top-bar {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 2rem 0.8rem;
+      border-bottom: 2px solid var(--accent-burn);
+      background: var(--bg);
+    }
+    .logo {
+      height: 32px;
+    }
+    .main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3.5rem 1rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 90vh;
+    }
+    h1 {
+      font-size: 2.6rem;
+      font-weight: 900;
+      margin: 0 0 1.1rem 0;
+      text-align: center;
+      text-shadow: 0 4px 32px #000a;
+    }
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 1.6rem;
+      font-weight: 400;
+      max-width: 630px;
+    }
+    .heartbeat {
+      margin: 2.2rem 0 2.8rem 0;
+      width: 210px;
+      max-width: 70vw;
+      height: 58px;
+      display: block;
+      filter: drop-shadow(0 0 14px var(--accent-burn));
+    }
+    .info-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem 1.5rem;
+      margin-top: 0.3rem;
+      margin-bottom: 2.2rem;
+    }
+    .info-card {
+      background: var(--card);
+      border-radius: 18px;
+      box-shadow: 0 4px 28px 0 #0004;
+      padding: 1.35rem 1.3rem 1.15rem;
+      min-width: 0;
+      min-height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .info-card h2 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--accent-burn);
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.01em;
+    }
+    .info-card.right h2 {
+      color: var(--accent-burn);
+    }
+    .info-card .muted {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 0.6rem;
+      font-weight: 300;
+    }
+    .countdown-box {
+      margin: 2.5rem auto 0 auto;
+      padding: 1.3rem 2.2rem 1.7rem 2.2rem;
+      background: #23272f;
+      border-radius: 20px;
+      box-shadow: 0 0 30px 0 rgba(0,255,255,0.08);
+      text-align: center;
+      display: inline-block;
+    }
+    .countdown-headline {
+      color: var(--accent-cyan, #16ffe5);
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: 0.9rem;
+      letter-spacing: 0.03em;
+      text-shadow: 0 2px 10px rgba(10,255,235,0.10);
+    }
+    #countdown {
+      color: var(--accent-cyan, #16ffe5);
+      font-size: 2.1rem;
+      font-weight: bold;
+      letter-spacing: 0.07em;
+      text-shadow: 0 0 14px rgba(14,255,255,0.22);
+    }
+    .pulse-container {
+      position: relative;
+      width: min(420px, 80vw);
+      height: 90px;
+      margin: 16px auto 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: width 0.25s, height 0.25s;
+    }
+    .pulse, .pulse-follow {
+      width: 4px;
+      height: 6px;
+      position: absolute;
+      top: 45px;
+      left: 0;
+      border-radius: 3px;
+      box-shadow: 0 0 6px 0 var(--accent-burn, #fc4422);
+      background: var(--accent-burn, #fc4422);
+    }
+    .pulse {
+      z-index: 3;
+      animation: pulse-move 7s linear infinite;
+    }
+    .pulse-follow {
+      z-index: 2;
+      opacity: 0.22;
+      animation: pulse-move 7s linear infinite;
+    }
+    @media (max-width: 700px) {
+      h1 { font-size: 2rem; }
+      .info-grid { grid-template-columns: 1fr; gap: 1.2rem 0; }
+      .main { padding: 2rem 0.2rem 1rem; }
+      .countdown-box {
+        font-size: 1.3rem;
+        padding: 1.1rem 0.5rem;
+      }
+    }
+    @media (max-width: 600px) {
+      .pulse-container { width: 96vw; height: 54px; }
+      .pulse, .pulse-follow { width: 3px; height: 4px; top: 24px; }
+    }
+    @keyframes pulse-move {
+      0%   { transform: translate(0, 0); }
+      8%   { transform: translate(38px, 0); }
+      12%  { transform: translate(46px, 16px);}
+      14%  { transform: translate(54px, -37px);}
+      17%  { transform: translate(62px, 28px);}
+      19%  { transform: translate(70px, -16px);}
+      20%  { transform: translate(76px, 0);}
+      22%  { transform: translate(114px, 0);}
+      25%  { transform: translate(122px, 15px);}
+      27%  { transform: translate(130px, -27px);}
+      29%  { transform: translate(138px, 29px);}
+      32%  { transform: translate(146px, -16px);}
+      33%  { transform: translate(152px, 0);}
+      52%  { transform: translate(194px, 0);}
+      54%  { transform: translate(202px, 24px);}
+      56%  { transform: translate(210px, -36px);}
+      58%  { transform: translate(218px, 31px);}
+      60%  { transform: translate(226px, -19px);}
+      62%  { transform: translate(234px, 0);}
+      66%  { transform: translate(270px, 0);}
+      68%  { transform: translate(278px, 14px);}
+      70%  { transform: translate(286px, -25px);}
+      72%  { transform: translate(294px, 24px);}
+      74%  { transform: translate(302px, -12px);}
+      76%  { transform: translate(308px, 0);}
+      100% { transform: translate(370px, 0);}
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <img src="https://images.rvnwl.com/rvnwl.svg" class="logo" alt="rvnwl logo"/>
+  </div>
+  <div class="main">
+    <h1>Stop Bag‑Holding. Start Value‑Holding.</h1>
+    <div class="subtitle">
+      Revamp is the first protocol that <strong>recycles</strong> illiquid tokens into hard native currency—at premium, preset rates.<br>
+      No hype. No persuasion. Just irreversible supply cleaning and instant liquidity.
+    </div>
+    <div class="pulse-container">
+      <div class="pulse"></div>
+      <!-- 22 follower bars for a smooth trail -->
+      <div class="pulse-follow" style="animation-delay: 0.045s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.090s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.135s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.180s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.225s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.270s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.315s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.360s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.405s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.450s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.495s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.540s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.585s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.630s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.675s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.720s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.765s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.810s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.855s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.900s"></div>
+      <div class="pulse-follow" style="animation-delay: 0.945s"></div>
+    </div>
+    <div class="countdown-box">
+      <div class="countdown-headline">
+        We’re going live in…
+      </div>
+      <div id="countdown"></div>
+    </div>
+    <div style="margin-top: 30px; color: var(--accent-burn)">
+        <h2>WHY REVAMP PROTOCOL MATTERS? YOU’LL DISCOVER ON LAUNCH DAY!</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-card">
+        <h2>THE GREAT CRYPTO ILLUSION</h2>
+        <div>
+          Most tokens aren’t used—they’re <em>priced</em>. That isn’t liquidity; it’s static noise that traps capital and drags the market down.
+        </div>
+      </div>
+      <div class="info-card right">
+        <h2>TURN DEAD WEIGHT INTO FUEL</h2>
+        <div>
+          Burn stagnant tokens, collect native currency at a guaranteed revamp rate, and watch organic value return to the wider ecosystem.
+        </div>
+      </div>
+      <div class="info-card">
+        <h2>HOW REVAMP WORKS</h2>
+        <div>
+          1 · Connect your wallet ❯ 2 · Select tokens to revamp ❯<br>
+          3 · Deposit &amp; receive native currency<br>
+          Every burn shrinks global supply and triggers rewards—in code, not promises.
+        </div>
+      </div>
+      <div class="info-card right">
+        <h2>NO “MOON SHOTS” – PURE CLEANUP</h2>
+        <div>
+          Revamp isn’t another token pitch. It’s post‑speculation infrastructure. We erase what others shill—and pay you for the rubble.
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Countdown timer
+    const countdownEl = document.getElementById('countdown');
+    const targetDate = new Date("2025-05-29T10:00:00Z"); // 12:00 CET is 10:00 UTC
+    function pad(n) { return n.toString().padStart(2, '0'); }
+    function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+        countdownEl.innerHTML = "Launching soon…";
+        return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins = Math.floor((diff / (1000 * 60)) % 60);
+    const secs = Math.floor((diff / 1000) % 60);
+    countdownEl.innerHTML =
+        `<span>${days}</span> days&nbsp;` +
+        `<span>${pad(hours)}</span> hours&nbsp;` +
+        `<span>${pad(mins)}</span> min&nbsp;` +
+        `<span>${pad(secs)}</span> sec`;
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>

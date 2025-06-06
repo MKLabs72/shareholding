@@ -1,0 +1,20 @@
+<svg width="420" height="90" xmlns="http://www.w3.org/2000/svg">
+  <polyline 
+    fill="none" 
+    stroke="#fc4422" 
+    stroke-width="4" 
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    points="0,45 38,45 46,61 54,8 62,73 70,29 76,45 114,45 122,60 130,18 138,77 146,29 152,45 194,45 202,69 210,9 218,76 226,26 234,45 270,45 278,59 286,20 294,69 302,33 308,45 370,45"
+    filter="url(#glow)"
+  />
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3.5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+</svg>
