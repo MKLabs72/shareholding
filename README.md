@@ -46,7 +46,7 @@ The initial deployment assigns protocol shares across defined roles and reserves
 | Blockchain Native          | 9          | 0x63C20...4eDa3B     |
 | Treasury & Shareholders    | 36         | 0x14b32...896a10     |
 
-![Initial Shareholding Distribution](./assets/shareholding-distribution.png)
+![Initial Shareholding Distribution](./docs/assets/shareholding-distribution.png)
 
 > **Note:** Each address represents a dedicated protocol role, functional budget, or governance pool, as defined in the contract at deployment. These assignments are immutable and on-chain.
 
