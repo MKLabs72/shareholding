@@ -117,13 +117,13 @@ Visit http://localhost:3000 to interact with your local frontend.
 
 Website / PoC UI: [rvnwl.com](https://rvnwl.com/revamp)
 
-Docs / GitBook: [mklabs72.gitbook.io](https://mklabs72.gitbook.io)
+Docs / GitBook: [modulexo.gitbook.io](https://modulexo.gitbook.io)
 
 Discord: [RVNWL] (https://discord.com/invite/VsSXFsMd)
 
 Telegram: [rvnwlofficial] (https://t.me/rvnwlofficial)
 
-GitHub: [github.com/rvnwl/protocol](https://github.com/MKLabs72/revamp)
+GitHub: [github.com/rvnwl/protocol](https://github.com/modulexo/revamp)
 
 ## 🤝 **Contributing**
 

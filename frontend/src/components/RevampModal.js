@@ -427,7 +427,7 @@ export default function RevampModal({
             <li><strong>Prohibited activity:</strong> Do not join using assets or funds in violation of applicable laws or third-party rights.</li>
             <li>
               Source code:&nbsp;
-              <a href="https://github.com/MKLabs72/revamp" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/modulexo/revamp" target="_blank" rel="noopener noreferrer">
                 GitHub repo.
               </a>
             </li>

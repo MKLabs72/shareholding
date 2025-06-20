@@ -428,7 +428,7 @@ export default function ClaimReinvestModal({
             </li>
             <li>
               This user interface does not provide financial advice. For further details, see the source code:&nbsp;
-              <a href="https://github.com/MKLabs72/revamp" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/modulexo/revamp" target="_blank" rel="noopener noreferrer">
                 GitHub repo.
               </a>
             </li>
